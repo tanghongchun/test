@@ -1,0 +1,26 @@
+server:
+  port: 8001
+spring:
+  application:
+     name: microservicecloud3-dept
+  datasource:
+     type: org.apache.commons.dbcp2.BasicDataSource
+     driver-class-name: com.mysql.jdbc.Driver
+     url: jdbc:mysql://127.0.0.1:3306/test1?useSSL=false&useUnicode=true&characterEncoding=utf8
+     username: root
+     password: root1234
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/ 
+       #defaultZone: http://thch7001.com:7001/eureka/,http://thch7002.com:7002/eureka/,http://thch7003.com:7003/eureka/ 
+  instance:
+    instance-id: dept8001
+    prefer-ip-address: true
+
+   
+info: 
+   app.name: microservicecloud3
+   compony.name: www.atgui.gu
+   infos: $spring.application.name$
